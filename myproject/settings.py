@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
 
     # myapp
     'user',
@@ -75,6 +76,10 @@ INSTALLED_APPS = [
 #AUTH_USER_MODEL = 'accounts.User'
 #SITE_ID = 1
 
+=======
+]
+
+>>>>>>> c777b675bcea2a506b5e340d1ed8c150c934c4bb
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
