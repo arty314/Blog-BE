@@ -53,7 +53,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
 
     # myapp
     'user',
@@ -61,25 +60,34 @@ INSTALLED_APPS = [
 
     # django-rest-auth
     'rest_framework',
-    #'rest_framework_simplejwt.token_blacklist',
-    #'dj_rest_auth',
-    #'dj_rest_auth.registration',
+    'rest_framework_simplejwt.token_blacklist',
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
 
     # django-allauth
-    #'allauth',
-    #'allauth.account',
-    #'allauth.socialaccount',
+    'allauth',  
+    'allauth.account',
+    'allauth.socialaccount',
+    'rest_framework.authtoken',
 
     # swagger
 ]
 
-#AUTH_USER_MODEL = 'accounts.User'
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
+    ),
+}
+
+AUTH_USER_MODEL = 'user.CustomUser'
 #SITE_ID = 1
 
-=======
-]
 
->>>>>>> c777b675bcea2a506b5e340d1ed8c150c934c4bb
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
