@@ -35,10 +35,10 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body =  models.TextField()
     #image = models.ImageField(upload_to = 'post_images/')
-    date = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     tags = models.ManyToManyField(Tag)
-    #likes = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_posts')
+    like_user = models.ManyToManyField(settings.AUTH_USER_MODEL,related_name='like_post')
 
     def __str__(self):
         return self.title
@@ -59,6 +59,9 @@ class Reply(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, default='')
     Comment = models.ForeignKey(Comment, on_delete=models.CASCADE)
+
+
+
 
 
 
