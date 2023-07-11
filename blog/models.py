@@ -1,5 +1,6 @@
 from django.db import models
-from user.models import CustomUser as User
+from django.contrib.auth.models import User
+
 
 
 class Blog(models.Model):
@@ -8,8 +9,10 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.Blogname
+    
 
 
+    
 # 카테고리(-게시물과 one-many 연결)와 태그(게시물에 태그 할당)
 class Category(models.Model):
     name = models.CharField(max_length=100)

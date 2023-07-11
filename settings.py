@@ -55,14 +55,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # myapp
-    'users',
+    'user',
     'blog',
 
     # django-rest-auth
     'rest_framework',
-    'rest_framework_simplejwt.token_blacklist',
-    'dj_rest_auth',
-    'dj_rest_auth.registration',
+    #'rest_framework_simplejwt.token_blacklist',
+    #'dj_rest_auth',
+    #'dj_rest_auth.registration',
 
     # django-allauth
     #'allauth',
@@ -74,6 +74,7 @@ INSTALLED_APPS = [
 
 #AUTH_USER_MODEL = 'accounts.User'
 #SITE_ID = 1
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
